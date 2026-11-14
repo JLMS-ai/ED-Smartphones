@@ -1,0 +1,32 @@
+/* Área do dono (painel administrativo) */
+main[hidden]{display:none}
+.adg{max-width:360px;margin:60px auto;display:grid;gap:8px}
+
+.adh{display:flex;justify-content:space-between;align-items:center;margin-top:24px}
+
+.tabs{display:flex;gap:8px;overflow-x:auto;margin:16px 0}
+.tabs button{border:1px solid var(--ln);border-radius:99px;padding:9px 18px;font-weight:600;white-space:nowrap}
+.tabs .on{background:#fff;color:#000}
+
+#ad h3{margin:26px 0 12px;font-size:20px}
+
+.oc{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;background:var(--s1);border:1px solid var(--ln);border-radius:14px;padding:14px 16px;margin-bottom:10px;font-size:15px}
+
+.oc small{color:var(--mu)}
+.or{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.or select{width:auto;padding:8px 10px}
+.ui{width:150px!important;padding:8px 10px!important}
+
+.btn.sm{padding:8px 16px;font-size:14px}
+.ok{color:var(--ok)}
+.yl{color:#e8c26a}
+.rd{color:#ff7a7a}
+
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.kp div{background:var(--s1);border:1px solid var(--ln);border-radius:16px;padding:16px}
+.kp small{color:var(--mu);display:block}
+.kp b{font-size:26px;letter-spacing:-.02em}
+
+.rk{display:grid;grid-template-columns:minmax(120px,1.2fr) 2fr 30px;gap:10px;align-items:center;margin-bottom:8px;font-size:15px}
+.rk i{display:block;height:10px;border-radius:9px;background:#fff}
+

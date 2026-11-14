@@ -1,0 +1,8 @@
+/* Seção de assistência técnica */
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px}
+.svc div{background:var(--s1);border:1px solid var(--ln);border-radius:16px;padding:16px;font-size:14.5px;color:var(--mu)}
+.svc b{display:block;color:#fff;font-size:16px;margin-bottom:2px}
+.tb{display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap}.tb button{border:1px solid var(--ln);border-radius:99px;padding:9px 18px;font-weight:600}.tb .on{background:var(--ac);border-color:var(--ac);color:#fff}
+#sq{margin-top:16px}#sq b{display:block;font-size:36px;font-weight:800;letter-spacing:-.02em}
+.tbl{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;margin-top:10px}.tbl div{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--ln);font-size:14.5px}
+@media(max-width:560px){.tbl{grid-template-columns:1fr}}
