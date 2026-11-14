@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05070d">
+<title>ED Smartphones | Venda e assistência especializada Apple</title>
+<meta name="description" content="ED Smartphones em Natal, RN: iPhones, iPads, Macs e acessórios novos e seminovos, assistência técnica e seu usado na troca.">
+<link rel="icon" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/product.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/services.css">
+</head>
+<body>
+<header><div class="w hd">
+<a class="brand" href="#top"><img src="assets/logo.png" alt="Logo ED Smartphones">ED Smartphones</a>
+<nav><a href="#iphones">iPhones</a><a href="#ipads">iPads</a><a href="#macs">Macs</a><a href="#acessorios">Acessórios</a><a href="#assistencia">Assistência</a><a href="#troca">Troca</a><a href="#duvidas">Dúvidas</a></nav>
+<button class="cartbtn" onclick="openCart()" aria-label="Abrir carrinho">Carrinho<b id="cc">0</b></button>
+</div></header>
+
+<main id="top" class="w">
+<div class="hero"><div class="t">
+<span class="tag">Venda e assistência especializada</span>
+<h1>Toda a linha Apple, <em>com quem entende.</em></h1>
+<p>iPhones, iPads, Macs e acessórios novos e seminovos. Assistência técnica com orçamento rápido e seu usado na troca.</p>
+<div class="cta"><a class="btn" href="#iphones">Ver produtos</a><a class="btn g" href="#assistencia">Assistência técnica</a></div>
+</div><div class="art" id="heroart"></div></div>
+<div class="perks"><div><b>Toda a linha Apple</b>iPhone, iPad, Mac e Watch</div><div><b>Assistência técnica</b>Tela, bateria, vidro e placa</div><div><b>Seu usado na troca</b>Avaliação na hora</div><div><b>Natal, RN</b>Tirol, Av. Romualdo Galvão</div></div>
+
+<section id="destaques"><h2>Destaques</h2><p class="sub">Os produtos que mais saem da loja.</p><div class="grid" id="g-top"></div></section>
+<section id="iphones"><h2>iPhones</h2><p class="sub">Novos lacrados e seminovos com nota de conservação. <a href="#" onclick="gradeGuide();return false" style="text-decoration:underline">Como funciona a nota</a></p><div class="grid" id="g-iphone"></div></section>
+<section id="ipads"><h2>iPads</h2><p class="sub">Para estudar, trabalhar e criar.</p><div class="grid" id="g-ipad"></div></section>
+<section id="macs"><h2>Macs</h2><p class="sub">MacBooks e iMacs, novos e seminovos.</p><div class="grid" id="g-mac"></div></section>
+<section id="acessorios"><h2>Acessórios</h2><p class="sub">Apple Watch, AirPods, capas, películas e carregadores.</p><div class="grid" id="g-acc"></div></section>
+
+<section id="assistencia"><h2>Assistência técnica</h2><p class="sub">iPhone, MacBook, iPad e Apple Watch. Faça um orçamento rápido pelo WhatsApp.</p>
+<div class="svc"><div><b>Troca de tela</b>Vidro e display de volta ao normal</div><div><b>Vidro traseiro</b>Troca da tampa trincada</div><div><b>Troca de bateria</b>Mais horas de uso no dia a dia</div><div><b>Reparo de placa</b>Diagnóstico e conserto especializado</div></div>
+<div class="panel"><div class="tb" id="svt"></div>
+<label for="sm">Modelo do iPhone</label><select id="sm" onchange="svI=+this.value;svDraw()"></select>
+<div id="sq"></div><p style="margin-top:12px"><a class="btn" id="sw" target="_blank" rel="noopener" href="#">Pedir orçamento no WhatsApp</a></p>
+<details><summary>Ver tabela completa</summary><div class="tbl" id="tbl"></div></details></div>
+<p class="meta" style="margin-top:10px;font-size:13.5px;color:var(--mu)">Valores de referência para demonstração. O orçamento final é feito após avaliar o aparelho.</p></section>
+
+<section id="nota"><div class="two">
+<div class="panel"><h2 style="font-size:26px">Nota de conservação</h2><p class="sub" style="margin-bottom:0">Todo seminovo passa por testes e recebe uma nota visual.</p>
+<div class="gl"><div><b class="g">A+</b><span><strong>Impecável</strong>Sem marcas visíveis. Parece novo.</span></div>
+<div><b class="g">A</b><span><strong>Excelente</strong>Micro marcas só vistas de perto. Tela sem riscos.</span></div>
+<div><b class="g gb">B</b><span><strong>Bom</strong>Riscos leves na lateral ou traseira. Tudo funcionando.</span></div></div></div>
+<div class="panel" id="troca"><h2 style="font-size:26px">Recebemos seu usado</h2><p class="sub" style="margin-bottom:0">Simule o valor que abatemos na sua compra. A avaliação final é feita na loja.</p>
+<label for="tm">Modelo</label><select id="tm" onchange="est()"><option value="1500">iPhone 11</option><option value="2000">iPhone 12</option><option value="2600" selected>iPhone 13</option><option value="3300">iPhone 14</option><option value="4300">iPhone 15</option><option value="5500">iPhone 15 Pro Max</option></select>
+<label for="tc">Estado</label><select id="tc" onchange="est()"><option value="1">Impecável</option><option value=".88" selected>Bom, com marcas leves</option><option value=".72">Marcas visíveis ou bateria abaixo de 80%</option></select>
+<div class="est" id="te"></div><small style="color:var(--mu)">Valor estimado e fictício, apenas demonstração.</small>
+<p style="margin-top:14px"><a class="btn" target="_blank" rel="noopener" href="https://wa.me/5584986145613?text=Quero%20avaliar%20meu%20aparelho%20para%20troca">Avaliar no WhatsApp</a></p></div>
+</div></section>
+
+<section id="local"><div class="panel"><h2 style="font-size:26px">Venha nos visitar</h2><p class="sub" style="margin-bottom:12px">Avenida Romualdo Galvão, 293, Empresarial Sfax, Tirol, Natal, RN.</p>
+<a class="btn g" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Avenida+Romualdo+Galv%C3%A3o+293+Natal+RN">Como chegar</a> <a class="btn" target="_blank" rel="noopener" href="https://wa.me/5584986145613">Chamar no WhatsApp</a></div></section>
+
+<section id="depo"><h2>Clientes da ED</h2><p class="sub">Depoimentos de demonstração.</p><div class="rv" id="rv"></div></section>
+<section id="duvidas"><h2>Dúvidas frequentes</h2><p class="sub">Tudo o que perguntam antes de comprar ou consertar.</p><div id="faq"></div></section>
+</main>
+<main id="pv" class="w" hidden></main>
+<main id="ad" class="w" hidden></main>
+
+<footer><div class="w"><div class="fg">
+<div><h4>ED Smartphones</h4><p>ED Smartphones Comércio e Serviços LTDA<br>CNPJ 00.000.000/0001-00 (fictício)<br>Avenida Romualdo Galvão, 293, Empresarial Sfax, Tirol, Natal, RN<br>(84) 98614-5613 · WhatsApp<br>Horário de atendimento: confirme pelo WhatsApp</p>
+<div class="chips"><span>Visa</span><span>Mastercard</span><span>Elo</span><span>Pix</span><span>Compra segura SSL</span><span>LGPD</span></div></div>
+<div><h4>Institucional</h4><a onclick="legal('priv')">Política de Privacidade e LGPD</a><a onclick="legal('termos')">Termos de Uso</a><a onclick="legal('troca')">Trocas e Devoluções</a><a onclick="legal('entrega')">Prazos de Entrega</a></div>
+<div><h4>Atendimento</h4><a target="_blank" rel="noopener" href="https://wa.me/5584986145613">WhatsApp</a><a href="https://instagram.com/edsmartphones" target="_blank" rel="noopener">Instagram @edsmartphones</a><a href="#duvidas">Dúvidas frequentes</a><a href="#admin">Área do dono</a></div>
+</div><div class="copy">© 2026 ED Smartphones. Site de demonstração: preços, estoque e depoimentos são fictícios. Apple, iPhone, iPad e Mac são marcas da Apple Inc. A ED Smartphones é uma revendedora independente.</div></div></footer>
+
+<a class="wa" target="_blank" rel="noopener" href="https://wa.me/5584986145613?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20ED%20Smartphones">Falar no WhatsApp</a>
+<dialog id="dlg"></dialog>
+<aside class="dr" id="dr" aria-label="Carrinho"><div class="hh">Seu carrinho<button onclick="closeCart()" aria-label="Fechar">✕</button></div><div class="ls" id="cl"></div><div class="ft" id="cf"></div></aside>
+<div class="toast" id="ts"></div>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/store.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/product.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/content.js"></script>
+<script src="js/services.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/router.js"></script>
+<script src="js/main.js"></script>
+</body></html>
