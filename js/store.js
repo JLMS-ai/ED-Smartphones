@@ -1,0 +1,9 @@
+// Armazenamento (localStorage), dados de demonstração e estado (pedidos, clientes, estoque, fotos)
+const mem={},DB={get(k,d){if(k in mem)return mem[k]??d;try{const v=localStorage.getItem("ed:"+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){mem[k]=v;try{localStorage.setItem("ed:"+k,JSON.stringify(v))}catch(e){}}};
+const DAY=864e5,NOW=Date.now(),iso=d=>String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"),bdf=o=>{const d=new Date();d.setDate(d.getDate()+o);return "1994-"+iso(d)};
+const defStk=()=>Object.fromEntries(P.map(p=>[p.id,p.c=="acc"?20:p.c=="novo"?6:2]));
+const S=(id,ago,t,n,its,pay,st,pg)=>{const it=its.map(([pid,q,gb])=>{const p=P.find(x=>x.id==pid);return{id:pid,n:p.n,gb,co:p.co[0],q,pr:p.pr+(p.st&&gb?p.st.find(z=>z[0]==gb)[1]:0)}});const sub=it.reduce((a,i)=>a+i.pr*i.q,0);return{id,t:NOW-ago*DAY,cl:t,nome:n,it,tot:pay=="Pix"?sub*.95:sub,pay,pago:pg,st}};
+const seedO=()=>[S(1001,0,"84999990001","Mariana Souza",[[6,1,128],[16,1]],"Pix","Pendente",false),S(1002,1,"84999990002","Rafael Torres",[[4,1,256]],"Cartão de crédito","Em preparo",true),S(1003,3,"84999990003","Camila Oliveira",[[3,1,128],[16,1]],"Pix","Entregue",true),S(1004,6,"84999990001","Mariana Souza",[[18,1],[17,1]],"Pix","Entregue",true),S(1005,9,"84999990004","Lucas Andrade",[[11,1,256]],"Cartão de crédito","Entregue",true),S(1006,12,"84999990002","Rafael Torres",[[19,2],[16,1]],"Pix","Entregue",true)];
+const seedC=()=>[{t:"84999990001",n:"Mariana Souza",b:bdf(0)},{t:"84999990002",n:"Rafael Torres",b:bdf(3)},{t:"84999990003",n:"Camila Oliveira",b:bdf(-20)},{t:"84999990004",n:"Lucas Andrade",b:bdf(40)}];
+let ORD=DB.get("ord",null)||seedO(),CLI=DB.get("cli",null)||seedC(),STK=DB.get("stk",null)||defStk(),IMG=DB.get("img",null)||{};
+const stk=id=>STK[id]??0;P.forEach(p=>{if(IMG[p.id])p.img=IMG[p.id]});
